@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOPOO - Luxury Vape Collection</title>
-    <!-- MISMO CSS -->
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -39,7 +38,7 @@
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
         }
         nav a {
@@ -69,11 +68,14 @@
             text-decoration: none;
             font-weight: 600;
             margin-bottom: 2rem;
-            transition: all 0.15s ease;
-            cursor: pointer;
+            padding: 0.6rem 1.5rem;
+            border: 2px solid #d4af37;
+            border-radius: 25px;
+            transition: all 0.3s;
         }
         .back-btn:hover {
-            color: #fff;
+            background: #d4af37;
+            color: #000;
             transform: translateX(-5px);
         }
         .product-detail {
@@ -216,25 +218,32 @@
             .specs-grid { grid-template-columns: 1fr; }
             .action-buttons { flex-direction: column; }
             nav ul { gap: 1rem; }
+            nav a { padding: 0.4rem 0.8rem; font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
     <header><h1>✨ Luxury Vape Collection</h1></header>
+    
+    <!-- ✅ MENÚ ACTUALIZADO CON URLS EXTERNAS COMPLETAS -->
     <nav>
         <ul>
-            <li><a href="index.html#inicio">Inicio</a></li>
-            <li><a href="index.html#productos">Productos</a></li>
-            <li><a href="index.html#lifepod">Life Pod</a></li>
-            <li><a href="index.html#clickmate">ClickMate</a></li>
-            <li><a href="index.html#nasty">Nasty</a></li>
-            <li><a href="index.html#oxbar">OXBAR</a></li>
-            <li><a href="index.html#voopoo">VOPOO</a></li>
-            <li><a href="index.html#stlh">STLH</a></li>
+            <li><a href="https://modulescene.github.io/Luxury-Smok/">Inicio</a></li>
+            <li><a href="https://modulescene.github.io/Luxury-Smok/#productos">Productos</a></li>
+            <li><a href="https://modulescene.github.io/LifePod/">Life Pod</a></li>
+            <li><a href="https://modulescene.github.io/Luxury-ClickMate/">ClickMate</a></li>
+            <li><a href="https://modulescene.github.io/Luxury-Nastyfx10/">Nasty FX10</a></li>
+            <li><a href="https://modulescene.github.io/Luxury-NastyJuice/">Nasty PX15K</a></li>
+            <li><a href="https://modulescene.github.io/Luxury-Oxbar/">OXBAR</a></li>
+            <li><a href="https://modulescene.github.io/Luxury-Voopo/">VOPOO</a></li>
+            <li><a href="https://modulescene.github.io/Luxury-STLTH/">STLH</a></li>
         </ul>
     </nav>
+    
     <div class="container">
-        <a href="index.html" class="back-btn">← Volver a Productos</a>
+        <!-- ✅ BOTÓN VOLVER ACTUALIZADO -->
+        <a href="https://modulescene.github.io/Luxury-Smok/" class="back-btn">← Volver a la Tienda</a>
+        
         <div class="product-detail">
             <div class="product-image-large">
                 <img src="https://i.postimg.cc/RFdrfqhv/Chat-GPT-Image-17-mar-2026-03-55-02-a-m.png" alt="VOPOO">
@@ -262,10 +271,12 @@
             </div>
         </div>
     </div>
+    
     <footer>
         <p class="footer-text">© 2026 Luxury Vape Collection. Todos los derechos reservados.</p>
         <p class="footer-text">⚠️ Prohibida la venta a menores de 18 años</p>
     </footer>
+    
     <script>
         document.querySelectorAll('.btn').forEach(btn => {
             btn.addEventListener('click', function() {
