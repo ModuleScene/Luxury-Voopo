@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOPOO - Luxury Vape Collection</title>
+    <!-- MISMO CSS -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+        }
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #d4af37 0%, #f4e5c2 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        nav {
+            background: #000;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.15s ease;
+            padding: 0.5rem 1rem;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        nav a:hover {
+            color: #fff;
+            border: 1px solid #d4af37;
+            transform: scale(1.05);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.15s ease;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            color: #fff;
+            transform: translateX(-5px);
+        }
+        .product-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .product-image-large {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 20px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #333;
+            height: 600px;
+        }
+        .product-image-large img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 40px rgba(212, 175, 55, 0.3));
+        }
+        .product-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .product-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37, #f4e5c2);
+            color: #000;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+        .price {
+            font-size: 3rem;
+            color: #d4af37;
+            font-weight: bold;
+            margin: 2rem 0;
+        }
+        .description {
+            color: #888;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .specs-section {
+            margin: 2rem 0;
+        }
+        .specs-section h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .spec-item {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid #d4af37;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        .spec-label {
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+        }
+        .spec-value {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+        .btn {
+            flex: 1;
+            padding: 1.5rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            color: #000;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.6);
+            transform: translateY(-3px);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+        }
+        .btn-secondary:hover {
+            background: #d4af37;
+            color: #000;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+        }
+        footer {
+            background: #000;
+            border-top: 2px solid #d4af37;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .footer-text {
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .product-detail {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+            .product-image-large {
+                height: 400px;
+            }
+            .product-info h2 { font-size: 2rem; }
+            .price { font-size: 2.5rem; }
+            .specs-grid { grid-template-columns: 1fr; }
+            .action-buttons { flex-direction: column; }
+            nav ul { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header><h1>✨ Luxury Vape Collection</h1></header>
+    <nav>
+        <ul>
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#productos">Productos</a></li>
+            <li><a href="index.html#lifepod">Life Pod</a></li>
+            <li><a href="index.html#clickmate">ClickMate</a></li>
+            <li><a href="index.html#nasty">Nasty</a></li>
+            <li><a href="index.html#oxbar">OXBAR</a></li>
+            <li><a href="index.html#voopoo">VOPOO</a></li>
+            <li><a href="index.html#stlh">STLH</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Volver a Productos</a>
+        <div class="product-detail">
+            <div class="product-image-large">
+                <img src="https://i.postimg.cc/RFdrfqhv/Chat-GPT-Image-17-mar-2026-03-55-02-a-m.png" alt="VOPOO">
+            </div>
+            <div class="product-info">
+                <span class="product-badge">TECHNOLOGY</span>
+                <h2>VOPOO</h2>
+                <div class="price">$45.99</div>
+                <p class="description">Tecnología GENE chip para disparo rápido y control preciso de temperatura. VOPOO lidera la innovación con su plataforma PnP X.</p>
+                <div class="specs-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <div class="specs-grid">
+                        <div class="spec-item"><div class="spec-label">Potencia</div><div class="spec-value">100W Max</div></div>
+                        <div class="spec-item"><div class="spec-label">Chip</div><div class="spec-value">GENE Chip</div></div>
+                        <div class="spec-item"><div class="spec-label">Batería</div><div class="spec-value">Dual 18650</div></div>
+                        <div class="spec-item"><div class="spec-label">Plataforma</div><div class="spec-value">PnP X</div></div>
+                        <div class="spec-item"><div class="spec-label">Pantalla</div><div class="spec-value">TFT 0.96"</div></div>
+                        <div class="spec-item"><div class="spec-label">Tanque</div><div class="spec-value">5ml</div></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary">Añadir al Carrito</button>
+                    <button class="btn btn-secondary">Consultar WhatsApp</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="footer-text">© 2026 Luxury Vape Collection. Todos los derechos reservados.</p>
+        <p class="footer-text">⚠️ Prohibida la venta a menores de 18 años</p>
+    </footer>
+    <script>
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => { this.style.transform = ''; }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
